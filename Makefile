@@ -1,6 +1,8 @@
-NAME = bin/philo
+NAME = philo
 
 FLAGS = -Wall -Wextra -Werror -g
+
+BIN = bin
 
 OBJ_DIR= obj
 
@@ -16,7 +18,7 @@ OBJ = $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRC))
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	cc $(FLAGS) -o $@ $^
+	cc $(FLAGS) -o $(BIN)/$@ $^
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	mkdir -p $(OBJ_DIR)
@@ -30,6 +32,6 @@ clean:
 	rm -rf $(OBJ_DIR)
 
 fclean: clean
-	rm -rf $(NAME)
+	rm -rf $(BIN)/$(NAME)
 
 re: fclean all
