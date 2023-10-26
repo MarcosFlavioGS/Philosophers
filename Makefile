@@ -7,7 +7,7 @@ OBJ_DIR= obj
 SRC_DIR = src
 
 SRC_FILES = \
-			main.c
+			main/main.c
 
 SRC = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
 
@@ -20,6 +20,7 @@ $(NAME): $(OBJ)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	mkdir -p $(OBJ_DIR)
+	mkdir -p $(OBJ_DIR)/main
 	cc $(FLAGS) -c $< -o $@
 
 run: all
