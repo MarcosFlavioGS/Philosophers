@@ -27,9 +27,9 @@ run: all
 	./$(NAME)
 
 clean:
-	rm -rf $(OBJ_DIR)
+	rm -rf $(OBJ_DIR)/*.o
 
 fclean: clean
-	rm -rf $(NAME)
+	rm $(NAME)
 
 re: fclean all
