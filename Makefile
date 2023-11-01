@@ -18,20 +18,19 @@ OBJ = $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRC))
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	cc $(FLAGS) -o $(BIN)/$@ $^
+	cc $(FLAGS) -o $@ $^
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
-	mkdir -p $(OBJ_DIR)
-	mkdir -p $(OBJ_DIR)/main
+	mkdir -p $(dir $@)
 	cc $(FLAGS) -c $< -o $@
 
 run: all
-	./$(NAME)
+	$(NAME)
 
 clean:
 	rm -rf $(OBJ_DIR)
 
 fclean: clean
-	rm -rf $(BIN)/$(NAME)
+	rm -rf $(NAME)
 
 re: fclean all
