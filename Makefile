@@ -2,6 +2,8 @@ NAME = philo
 
 FLAGS = -Wall -Wextra -Werror -g
 
+LINKERS = -pthread
+
 BIN = bin
 
 OBJ_DIR= obj
@@ -18,7 +20,7 @@ OBJ = $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRC))
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	cc $(FLAGS) -o $@ $^
+	cc $(FLAGS) $(LINKERS) -o $@ $^
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	mkdir -p $(dir $@)

@@ -12,13 +12,33 @@
 
 #include "../../includes/philo.h"
 
+void *routine()
+{
+	printf("Test from threads\n");
+}
+
 /*
 ** Entrypoint of the Philosophers program.
 */
-int main(int argc, char **argv)
+int main(void)
 {
-	(void)argc;
-	(void)argv;
-	printf("Hello World !\n");
+	pthread_t philo_array[5];
+	int num;
+	int i;
+
+	i = 0;
+	num = 5;
+	while (i < num - 1)
+	{
+		if (pthread_create(&philo_array[i], NULL, &routine, NULL) != 0)
+		{
+			return (1);
+		}
+		if (pthread_join(philo_array[i], NULL) != 0)
+		{
+			return (2);
+		}
+		i++;
+	}
 	return (0);
 }
