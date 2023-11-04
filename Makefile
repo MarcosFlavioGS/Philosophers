@@ -27,7 +27,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	cc $(FLAGS) -c $< -o $@
 
 run: all
-	$(NAME)
+	./$(NAME)
 
 clean:
 	rm -rf $(OBJ_DIR)

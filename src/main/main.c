@@ -15,6 +15,7 @@
 void *routine()
 {
 	printf("Test from threads\n");
+	return (0);
 }
 
 /*
@@ -34,6 +35,11 @@ int main(void)
 		{
 			return (1);
 		}
+		i++;
+	}
+	i = 0;
+	while (i < num - 1)
+	{
 		if (pthread_join(philo_array[i], NULL) != 0)
 		{
 			return (2);
