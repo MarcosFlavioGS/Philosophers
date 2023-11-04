@@ -21,20 +21,23 @@ void *routine()
 /*
 ** Entrypoint of the Philosophers program.
 */
-int main(void)
+int main(int argc, char **argv)
 {
+	(void)argc;
+	(void)argv;
 	pthread_t philo_array[5];
 	int num;
 	int i;
 
 	i = 0;
 	num = 5;
-	while (i < num - 1)
+	while (i < num)
 	{
 		if (pthread_create(&philo_array[i], NULL, &routine, NULL) != 0)
 		{
 			return (1);
 		}
+		printf("Philosopher %d created\n", i);
 		i++;
 	}
 	i = 0;
