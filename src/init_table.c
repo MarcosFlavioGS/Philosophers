@@ -66,4 +66,5 @@ t_table *init_table(char *argv[])
 	table = ft_calloc(sizeof(t_table), 1);
 	table->forks = init_forks(ft_atoi(argv[1]));
 	table->philos = init_philos(table->forks, argv);
+	return (table);
 }
