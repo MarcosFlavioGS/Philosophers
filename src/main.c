@@ -10,44 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/philo.h"
-
-void *routine()
-{
-	printf("Test from threads\n");
-	return (0);
-}
+#include "../includes/philo.h"
 
 /*
 ** Entrypoint of the Philosophers program.
 */
-int main(int argc, char **argv)
+int	main(int argc, char *argv[])
 {
-	(void)argc;
-	(void)argv;
-	pthread_t philo_array[5];
-	int num;
-	int i;
+	t_table	*table;
 
-	i = 0;
-	num = 5;
-	while (i < num)
-	{
-		if (pthread_create(&philo_array[i], NULL, &routine, NULL) != 0)
-		{
-			return (1);
-		}
-		printf("Philosopher %d created\n", i);
-		i++;
-	}
-	i = 0;
-	while (i < num - 1)
-	{
-		if (pthread_join(philo_array[i], NULL) != 0)
-		{
-			return (2);
-		}
-		i++;
-	}
+	if (!validate_argv(argc, argv))
+		return (1);
+	table = init_table(argv);
+	loop_simulation(table);
+	free_table(table);
 	return (0);
 }
