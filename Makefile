@@ -1,12 +1,11 @@
 NAME = philo
-PATH_SRCS = ./sources/
-PATH_TIME_SRCS = ./sources/time/
-PATH_UTILS = ./sources/utils/
-PATH_ACTIONS_SRCS = ./sources/actions/
+PATH_SRCS = ./src/
+PATH_TIME_SRCS = ./src/time/
+PATH_UTILS = ./src/utils/
+PATH_ACTIONS_SRCS = ./src/actions/
 PATH_OBJS = ./objects/
 
 SRCS = main.c \
-	   ate_enough.c \
 	   free_table.c \
 	   init_table.c \
 	   loop_simulation.c \

@@ -1,6 +1,6 @@
 #include "../includes/philo.h"
 
-static int check_max(char *argv[])
+static int	check_extremes(char *argv[])
 {
 	int	max;
 	int	min;
@@ -18,7 +18,7 @@ static int check_max(char *argv[])
 	return (1);
 }
 
-static int check_for_words(char *argv[])
+static int	check_for_words(char *argv[])
 {
 	int	i;
 	int	j;
@@ -39,14 +39,14 @@ static int check_for_words(char *argv[])
 	return (1);
 }
 
-int validate_argv(int argc, char *argv[])
+int	validate_argv(int argc, char *argv[])
 {
-	(void)argv;
+	(void) argv;
 	if (argc < 5 || argc > 6)
 		return (0);
 	if (!check_for_words(argv))
 		return (0);
-	if (check_max(argv))
+	if (!check_extremes(argv))
 		return (0);
-	return (0);
+	return (1);
 }
