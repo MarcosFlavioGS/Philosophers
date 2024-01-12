@@ -17,11 +17,11 @@
 # include <sys/time.h>
 # include <unistd.h>
 
-# define TAKE_FORK "has taken a fork. 🍴"
-# define EAT "is eating. 😋"
-# define SLEEP "is sleeping. 😴"
-# define THINK "is thinking. 🤔"
-# define DIE "died. 🪦"
+# define TAKE_FORK "has taken a fork."
+# define EAT "is eating."
+# define SLEEP "is sleeping."
+# define THINK "is thinking."
+# define DIE "died."
 
 typedef pthread_mutex_t	t_fork;
 
@@ -60,12 +60,12 @@ t_table		*init_table(char *argv[]);
 int			validate_argv(int argc, char *argv[]);
 void		free_table(t_table *table);
 
-/* Actions functions */
+/* Action functions */
 int			eat(t_philo *philo, time_t sim_start);
 int			rest(t_philo *philo, time_t sim_start);
 int			think(t_philo *philo, time_t sim_start);
 
-/* Time-related functions */
+/* Time functions */
 void		msleep(int time);
 time_t		get_current_time(void);
 time_t		get_elapsed_time(long int start);
@@ -77,7 +77,6 @@ void		*simulation(void *arg);
 
 /* Utils functions */
 int			are_philos_full(t_philo *philo);
-int			ate_enough(t_philo *philo);
 long int	ft_atoi(const char *str);
 void		*ft_calloc(size_t count, size_t size);
 int			ft_isdigit(int c);

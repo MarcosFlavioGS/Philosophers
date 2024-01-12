@@ -46,30 +46,30 @@ $(NAME): $(OBJS) $(UTILS_OBJS) $(TIME_OBJS) $(ACTIONS_OBJS)
 $(PATH_OBJS)%.o: $(PATH_SRCS)%.c
 	@mkdir -p $(PATH_OBJS)
 	@cc $(FLAGS) $(INCLUDE) -c $< -o $@
-	@echo "\033[1;92m[SUCCESS] Object creation done!\033[0m"
+	@echo "[SUCCESS] Object creation done!"
 
 $(PATH_OBJS)%.o: $(PATH_UTILS)%.c
 	@mkdir -p $(PATH_OBJS)
 	@cc $(FLAGS) $(INCLUDE) -c $< -o $@
-	@echo "\033[1;92m[SUCCESS] Object creation done!\033[0m"
+	@echo "[SUCCESS] Object creation done!"
 
 $(PATH_OBJS)%.o: $(PATH_TIME_SRCS)%.c
 	@mkdir -p $(PATH_OBJS)
 	@cc $(FLAGS) $(INCLUDE) -c $< -o $@
-	@echo "\033[1;92m[SUCCESS] Object creation done!\033[0m"
+	@echo "[SUCCESS] Object creation done!"
 
 $(PATH_OBJS)%.o: $(PATH_ACTIONS_SRCS)%.c
 	@mkdir -p $(PATH_OBJS)
 	@cc $(FLAGS) $(INCLUDE) -c $< -o $@
-	@echo "\033[1;92m[SUCCESS] Object creation done!\033[0m"
+	@echo "[SUCCESS] Object creation done!"
 
 clean:
 	@rm -rf $(PATH_OBJS)
-	@echo "\33[1;93m[SUCCESS] Objects removed!\33[0m"
+	@echo "[SUCCESS] Objects removed!"
 
 fclean: clean
 	@rm -f $(NAME)
-	@echo "\033[1;93m[SUCCESS] Full clean done!\33[0m"
+	@echo "[SUCCESS] Full clean done!"
 
 re: fclean all
 
