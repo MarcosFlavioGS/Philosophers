@@ -31,12 +31,12 @@ static t_args	*init_args(char *argv[])
 	return (args);
 }
 
-static t_philo *init_philos(t_fork *forks, char *argv[])
+static t_philo	*init_philos(t_fork *forks, char *argv[])
 {
-	t_philo *philos;
-	t_args  *args;
-	int     index;
-	long    sim_start;
+	t_philo	*philos;
+	t_args	*args;
+	int		index;
+	long	sim_start;
 
 	index = 0 ;
 	sim_start = get_current_time();
@@ -56,10 +56,10 @@ static t_philo *init_philos(t_fork *forks, char *argv[])
 	return (philos);
 }
 
-static t_fork *init_forks(int n)
+static t_fork	*init_forks(int n)
 {
-	t_fork *forks;
-	int    index;
+	t_fork	*forks;
+	int		index;
 
 	index = 0;
 	forks = ft_calloc(sizeof(t_fork), n);
@@ -71,9 +71,9 @@ static t_fork *init_forks(int n)
 	return (forks);
 }
 
-t_table *init_table(char *argv[])
+t_table	*init_table(char *argv[])
 {
-	t_table *table;
+	t_table	*table;
 
 	table = ft_calloc(sizeof(t_table), 1);
 	table->forks = init_forks(ft_atoi(argv[1]));

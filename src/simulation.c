@@ -12,7 +12,7 @@
 
 #include "../includes/philo.h"
 
-static void *eat_alone(t_philo *philo, time_t sim_start)
+static void	*eat_alone(t_philo *philo, time_t sim_start)
 {
 	pthread_mutex_lock(philo->left_fork);
 	print_state(philo, TAKE_FORK, sim_start);
@@ -20,9 +20,9 @@ static void *eat_alone(t_philo *philo, time_t sim_start)
 	return (NULL);
 }
 
-void *simulation(void *ptr)
+void	*simulation(void *ptr)
 {
-	t_philo *philo;
+	t_philo	*philo;
 
 	philo = ptr;
 	if (philo->id % 2 == 0)

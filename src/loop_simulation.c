@@ -12,11 +12,11 @@
 
 #include "../includes/philo.h"
 
-void loop_simulation(t_table *table)
+void	loop_simulation(t_table *table)
 {
-	pthread_t *threads;
-	pthread_t monitor_thread;
-	int       i;
+	pthread_t	*threads;
+	pthread_t	monitor_thread;
+	int			i;
 
 	threads = ft_calloc(sizeof(pthread_t), table->philos->args->p_quantity);
 	i = 0;
